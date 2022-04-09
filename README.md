@@ -1,3 +1,10 @@
+# CRUD com ReactJS
+
+* Criar um registro 
+* Ver as informação de um registro 
+* Atualizar as informações de um registro 
+* Eliminar um registro 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
