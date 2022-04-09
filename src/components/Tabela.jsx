@@ -1,37 +1,45 @@
-function Tabela() {
+function Tabela({saveData,dataList,deleteData,updadeData}) {
     return(
         <div className="row">
-            <button className="btn btn-success">Adicionar</button>
+            <button
+                className="btn btn-success"
+                onClick={saveData}
+            >Adicionar</button>
             <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
+                        <th>Idade</th>
                         <th>Email</th>
-                        <th>Sexo</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <?php foreach ($pessoas->pessoas as $pessoa): ?>
-                        <tr>
-                            <th scope="row">
-                                <input type="checkbox" className="custom-checkbox" name="check" value="<?php echo $pessoa['id']; ?>">
-                            </th>
-                            <td><?php echo $pessoa['nome']; ?></td>
-                            <td><?php echo $pessoa['endereco']; ?></td>
-                            <td><?php echo $pessoa['telefone']; ?></td>
-                            <td><?php echo $pessoa['email']; ?></td>
-                            <td><?php echo mostrar_sexo($pessoa['sexo']); ?></td>
-                            <td width=250>
-                                <a className="btn btn-primary" href="read.php?id=<?php echo($pessoa['id']);?>">Info</a>
-                                <a className="btn btn-warning" href="write.php?id=<?php echo($pessoa['id']);?>">Atualizar</a>
-                                <a className="btn btn-danger" href="delete.php?id=<?php echo($pessoa['id']);?>">Excluir</a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?> */}
+                    {
+                        dataList.map((data,index)=> (
+                            <tr key={index}>
+                                <th scope="row">{index+1}</th>
+                                <td>{data.nome}</td>
+                                <td>{data.idade}</td>
+                                <td>{data.email}</td>
+                                <td width='250' >
+                                    {/* <button
+                                        className="btn btn-primary"
+                                        onClick={readData(index)}
+                                    >Info</button>*/}
+                                    <button
+                                        className="btn btn-warning"
+                                        onClick={e => {updadeData(index)}}
+                                    >Atualizar</button> 
+                                    <button
+                                        className="btn btn-danger" 
+                                        onClick={e =>{deleteData(index)}}
+                                    >Excluir</button>
+                                </td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </div>
