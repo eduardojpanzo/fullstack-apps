@@ -1,4 +1,4 @@
-function Formulario() {
+function Formulario({getData}) {
     return(
         <div className="card-body">
             <form className="form-horizontal">
@@ -8,27 +8,21 @@ function Formulario() {
                         size="50" 
                         class="form-control"
                         type="text"
-                        placeholder="Nome" 
+                        placeholder="Nome"
+                        name="nome"
+                        onInput={getData}
                     />
                 </article>
 
                 <article class="control-group">
-                    <label class="control-label">Endereço</label>
+                    <label class="control-label">Idade</label>
                     <input
                         size="80"
                         class="form-control"
                         type="text"
-                        placeholder="Endereço"
-                    />
-                </article>
-
-                <article class="control-group">
-                    <label class="control-label">Telefone</label>
-                    <input
-                        size="35"
-                        class="form-control"
-                        type="text"
-                        placeholder="Telefone"
+                        placeholder="Idade"
+                        name="idade"
+                        onInput={getData}
                     />
                 </article>
 
@@ -39,6 +33,8 @@ function Formulario() {
                         class="form-control"
                         type="text"
                         placeholder="Email"
+                        name="email"
+                        onInput={getData}
                     />
                 </article>
             </form>
