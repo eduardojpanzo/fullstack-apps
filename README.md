@@ -3,7 +3,8 @@
 * Criar um registro 
 * Ver as informação de um registro 
 * Atualizar as informações de um registro 
-* Eliminar um registro 
+* Eliminar um registro
+* Validação de formulario 
 
 # Getting Started with Create React App
 
