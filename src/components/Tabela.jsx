@@ -1,3 +1,4 @@
+import {NavLink} from 'react-router-dom'
 import { Button } from "./Styles";
 
 function Tabela({selectData,dataList}) {
@@ -21,7 +22,9 @@ function Tabela({selectData,dataList}) {
                     <td>{data.idade}</td>
                     <td>{data.email}</td>
                     <td width='250' >
-                        <Button onClick={e=>{selectData(data)}}>Selecionar</Button>
+                        <Button onClick={e=>{selectData(data)}}>
+                            <NavLink className='navlink' to='/form'>Selecionar</NavLink>
+                        </Button>
                     </td>
                 </tr>
             ))}

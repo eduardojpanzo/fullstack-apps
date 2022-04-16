@@ -30,6 +30,19 @@ export const  Header = styled.header`
     }
 `
 
+export const Navbar = styled.nav`
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    .navlink{
+        font-size: 15pt;
+        font-weight: bold;
+        text-decoration: none;
+    }
+`;
+
 export const Button = styled.button`
     display: inline-block;
     padding: 0.375rem 0.75rem;
@@ -43,6 +56,11 @@ export const Button = styled.button`
     text-align: center;
     outline: 0;
     cursor: pointer;
+    .navlink{
+        width: 100%;
+        color: #222;
+        text-decoration: none;
+    }
 `
 
 export const Article = styled.article`
