@@ -1,44 +1,47 @@
-function Formulario({getData}) {
+import {Article} from './Styles';
+
+
+function Formulario({getData,dados}) {
     return(
-        <div className="card-body">
-            <form className="form-horizontal">
-                <article className="control-group">
-                    <label className="control-label">Nome</label>
-                    <input
-                        size="50" 
-                        class="form-control"
-                        type="text"
-                        placeholder="Nome"
-                        name="nome"
-                        onInput={getData}
-                    />
-                </article>
+        <form className="formulario">
 
-                <article class="control-group">
-                    <label class="control-label">Idade</label>
-                    <input
-                        size="80"
-                        class="form-control"
-                        type="text"
-                        placeholder="Idade"
-                        name="idade"
-                        onInput={getData}
-                    />
-                </article>
+            <Article>
+                <label>Nome</label>
+                <input
+                    size="50" 
+                    type="text"
+                    placeholder="Nome"
+                    name="nome"
+                    onInput={e=>getData(e)}
+                    value={dados.nome}
+                />
+            </Article>
 
-                <article class="control-group">
-                    <label class="control-label">Email</label>
-                    <input
-                        size="40"
-                        class="form-control"
-                        type="text"
-                        placeholder="Email"
-                        name="email"
-                        onInput={getData}
-                    />
-                </article>
-            </form>
-        </div>
+            <Article>
+                <label>Idade</label>
+                <input
+                    size="50"
+                    type="number"
+                    min={0}
+                    placeholder="Idade"
+                    name="idade"
+                    onInput={e=>getData(e)}
+                    value={dados.idade}
+                />
+            </Article>
+
+            <Article>
+                <label>Email</label>
+                <input
+                    size="50"
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                    onInput={e=>getData(e)}
+                    value={dados.email}
+                />
+            </Article>
+        </form>
     )
 }
 

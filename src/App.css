@@ -1,0 +1,28 @@
+.table{
+    width:100%;
+    padding: 2em;
+    border-collapse: separate;
+    table-layout:auto;
+    font-size: 14pt;
+}
+thead th{
+    padding: 10px 0;
+    background-color:rgb(226, 219, 219);
+    font-weight: 600;
+}
+tbody tr:nth-child(2n+1) {
+    background-color: #f1f1f1;
+}
+tbody th,
+tbody td{
+    text-align: center;
+    padding: 4px 0;
+}
+
+.formulario{
+    max-width:520px;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
