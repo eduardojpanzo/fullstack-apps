@@ -11,12 +11,16 @@ thead th{
     font-weight: 600;
 }
 tbody tr:nth-child(2n+1) {
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
 }
 tbody th,
 tbody td{
     text-align: center;
     padding: 4px 0;
+}
+tbody .navlink{
+    text-decoration: none;
+    color: #222;
 }
 
 .formulario{

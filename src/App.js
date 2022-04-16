@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
+import ActionButton from './components/ActionButton';
 import Formulario from './components/Formulario';
-import {Header,Button} from './components/Styles'
+import {Header,Navbar} from './components/Styles';
 import Tabela from './components/Tabela';
 
 class CreateData{
@@ -68,7 +70,7 @@ function App() {
   function updadeData() {
     let copiaDataList = [...dataList]
     
-    dataList.map((data,index)=>{
+    dataList.map((data,index) => {
       if (data.id === dados.id) {
         copiaDataList[index] =  dados;
         setDataList(copiaDataList);
@@ -91,42 +93,32 @@ function App() {
         <h2>Crud em ReactJS <span>Eduardo JP</span></h2>
      </Header>
 
-     <Button bgColor='#e61384'>
-       Ir para o formulário
-      </Button>
+     <Navbar>
+        <NavLink className='navlink' to='/'>Tabela</NavLink>
+        <NavLink className='navlink' to='/form' onClick={formPadrao}>
+          Adicionar com formulário
+        </NavLink>
+     </Navbar>
 
-      <Tabela 
-        selectData={selectData}
-        dataList={dataList}
-      />
-
-      <Formulario
-        getData={getData}
-        dados={dados}
-      />
-
-      {
-        selectedData?
+      <Routes>
+        <Route path='/' element={
+          <Tabela 
+            selectData={selectData}
+            dataList={dataList} />
+        }/>
+        <Route path='form' element={
           <>
-            <Button
-              bgColor='#fb0f0f'
-              onClick={deleteData}
-            >Eliminar</Button>
+            <Formulario getData={getData} dados={dados}/>
 
-            <Button
-              bgColor='#ff9800'
-              onClick={updadeData}
-            >Atualizar</Button>
+            <ActionButton
+              addDate={addDate} 
+              deleteData={deleteData} 
+              updadeData={updadeData}
+              selectedData={selectedData}
+            />            
           </>
-        :
-          <Button
-            bgColor='#009dee'
-            onClick={addDate}
-          >Adicionar na Lista</Button>
-      }
-      <Button>Voltar</Button>
-
-
+        } />
+      </Routes>
     </>
   );
 }
