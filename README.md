@@ -4,7 +4,7 @@
 * Ver as informação de um registro 
 * Atualizar as informações de um registro 
 * Eliminar um registro
-* Validação de formulario 
+* Validação de formulario com react JS
 
 # Getting Started with Create React App
 
